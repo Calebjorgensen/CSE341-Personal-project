@@ -1,0 +1,95 @@
+{
+    "components": [
+      {
+        "id": "1",
+        "name": "NVIDIA GeForce RTX 3080",
+        "type": "GPU",
+        "brand": "NVIDIA",
+        "specifications": {
+          "memory": "10GB GDDR6X",
+          "core_clock": "1440 MHz",
+          "boost_clock": "1710 MHz",
+          "interface": "PCIe 4.0",
+          "ports": ["HDMI 2.1", "DisplayPort 1.4a"]
+        },
+        "price": 699.99,
+        "availability": "in stock"
+      },
+      {
+        "id": "2",
+        "name": "Intel Core i9-11900K",
+        "type": "CPU",
+        "brand": "Intel",
+        "specifications": {
+          "cores": 8,
+          "threads": 16,
+          "base_clock": "3.5 GHz",
+          "boost_clock": "5.3 GHz",
+          "socket": "LGA 1200",
+          "TDP": "125W"
+        },
+        "price": 499.99,
+        "availability": "in stock"
+      },
+      {
+        "id": "3",
+        "name": "Corsair Vengeance LPX 16GB (2x8GB) DDR4",
+        "type": "RAM",
+        "brand": "Corsair",
+        "specifications": {
+          "capacity": "16GB",
+          "type": "DDR4",
+          "speed": "3200 MHz",
+          "latency": "16-18-18-36",
+          "voltage": "1.35V"
+        },
+        "price": 74.99,
+        "availability": "in stock"
+      },
+      {
+        "id": "4",
+        "name": "ASUS ROG Strix Z590-E",
+        "type": "Motherboard",
+        "brand": "ASUS",
+        "specifications": {
+          "socket": "LGA 1200",
+          "chipset": "Intel Z590",
+          "memory_support": "64GB DDR4",
+          "form_factor": "ATX",
+          "ports": ["USB 3.2", "Thunderbolt 4", "Wi-Fi 6"]
+        },
+        "price": 299.99,
+        "availability": "in stock"
+      },
+      {
+        "id": "5",
+        "name": "Samsung 970 Evo Plus 1TB",
+        "type": "Storage",
+        "brand": "Samsung",
+        "specifications": {
+          "type": "SSD",
+          "interface": "M.2 NVMe",
+          "capacity": "1TB",
+          "read_speed": "3500 MB/s",
+          "write_speed": "3300 MB/s"
+        },
+        "price": 129.99,
+        "availability": "in stock"
+      },
+      {
+        "id": "6",
+        "name": "NZXT Kraken Z63 280mm",
+        "type": "Cooling",
+        "brand": "NZXT",
+        "specifications": {
+          "cooling_type": "Liquid",
+          "radiator_size": "280mm",
+          "fans": "2x 140mm",
+          "LED": "RGB"
+        },
+        "price": 189.99,
+        "availability": "in stock"
+      }
+    ]
+  }
+  
