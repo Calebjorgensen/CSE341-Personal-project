@@ -1,2 +1,47 @@
 ### Here's is a test for the project
 GET http://localhost:3000/pcComponents
+
+### Get request by ID
+GET http://localhost:3000/pcComponents/67a7cbb801ed1674e85ef0f7
+
+### Put test
+POST http://localhost:3000/pcComponents HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "NZXT Kraken Z63 280mm",
+    "type": "Cooling",
+    "brand": "NZXT",
+    "specifications": {
+        "cooling_type": "Liquid",
+        "radiator_size": "280mm",
+        "fans": "2x 140mm",
+        "LED": "RGB"
+    },
+    "price": 189.99,
+    "availability": "in stock"
+
+}
+
+###
+PUT http://localhost:3000/pcComponents/67a7cbcf01ed1674e85ef0f9 HTTP/1.1
+Content-Type: application/json
+
+  {
+    "_id": "67a7cbcf01ed1674e85ef0f9",
+    "name": "Corsair Vengeance LPX 16GB  DDR4",
+    "type": "RAMMMM",
+    "brand": "Corsair",
+    "specifications": {
+      "capacity": "16GB",
+      "type": "DDR4",
+      "speed": "3200 MHz",
+      "latency": "16-18-18-36",
+      "voltage": "1.35V"
+    },
+    "price": 74.99,
+    "availability": "in stock"
+  }
+
+### 
+DELETE  http://localhost:3000/pcComponents/67a7dc18b365db942a87313c HTTP/1.1
