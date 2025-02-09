@@ -16,19 +16,25 @@ const getAllComponents = async (req, res) => {
 
 // Get a single PC component by ID
 const getComponentById = async (req, res, next) => {
-  const componentId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().collection('pcComponents').find({ _id: componentId });
+  const componentId = req.params.id;
 
-  result.toArray().then((component) => {
-    res.setHeader('Content-Type', 'application/json');
-    if (component.length === 0) {
-      res.status(404).json({ error: 'Component not found' });
-    } else {
-      res.status(200).json(component[0]);
-    }
-  }).catch(err => {
-    res.status(500).json({ error: 'Error fetching component' });
-  });
+  // Validate if componentId is a valid ObjectId
+  if (!ObjectId.isValid(componentId)) {
+      return res.status(400).json({ error: 'Invalid component ID format' });
+  }
+
+  try {
+      const result = await mongodb.getDb().collection('pcComponents').findOne({ _id: new ObjectId(componentId) });
+
+      if (!result) {
+          return res.status(404).json({ error: 'Component not found' });
+      }
+
+      res.status(200).json(result);
+  } catch (error) {
+      console.error('Error fetching component:', error);
+      res.status(500).json({ error: 'Error fetching component' });
+  }
 };
 
 
@@ -38,7 +44,12 @@ const addComponent = async (req, res) => {
     const component = {
       name: req.body.name,
       brand: req.body.brand,
-      price: req.body.price
+      price: req.body.price,
+      model: req.body.model,
+      memory: req.body.memory,
+      coreClock: req.body.coreClock,
+      interface: req.body.interface,
+      releaseDate: req.body.releaseDate
     };
   
     const response = await mongodb.getDb().collection('pcComponents').insertOne(component);
@@ -55,7 +66,12 @@ const addComponent = async (req, res) => {
     const updatedComponent = {
       name: req.body.name,
       brand: req.body.brand,
-      price: req.body.price
+      price: req.body.price,
+      model: req.body.model,
+      memory: req.body.memory,
+      coreClock: req.body.coreClock,
+      interface: req.body.interface,
+      releaseDate: req.body.releaseDate
     };
   
     const response = await mongodb.getDb().collection('pcComponents').replaceOne({ _id: componentId }, updatedComponent);

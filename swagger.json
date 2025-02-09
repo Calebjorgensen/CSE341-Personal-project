@@ -11,6 +11,16 @@
     "https"
   ],
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/pcComponents/": {
       "get": {
         "description": "",
@@ -40,6 +50,21 @@
                 },
                 "price": {
                   "example": "any"
+                },
+                "model": {
+                  "example": "any"
+                },
+                "memory": {
+                  "example": "any"
+                },
+                "coreClock": {
+                  "example": "any"
+                },
+                "interface": {
+                  "example": "any"
+                },
+                "releaseDate": {
+                  "example": "any"
                 }
               }
             }
@@ -58,9 +83,6 @@
     "/pcComponents/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -72,6 +94,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -103,6 +128,21 @@
                   "example": "any"
                 },
                 "price": {
+                  "example": "any"
+                },
+                "model": {
+                  "example": "any"
+                },
+                "memory": {
+                  "example": "any"
+                },
+                "coreClock": {
+                  "example": "any"
+                },
+                "interface": {
+                  "example": "any"
+                },
+                "releaseDate": {
                   "example": "any"
                 }
               }
